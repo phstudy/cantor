@@ -538,7 +538,7 @@ public class HLLCounter implements Serializable {
 
      @return  the <code>double</code> estimated integral term
   */
-  private static double getAlpha(int m) {
+  public static double getAlpha(int m) {
     switch (m) {
     case 16: return 0.673;
     case 32: return 0.697;
@@ -565,7 +565,7 @@ public class HLLCounter implements Serializable {
      @return      the <code>double</code> estimate of the 
                   cardinality
   */
-  private static double estimateSize(byte[] Q, double alpha) {
+  public static double estimateSize(byte[] Q, double alpha) {
     int q = Q.length;
     byte w = (byte)Math.round(Math.log(q)/LOG_2);
     int count = 0;
